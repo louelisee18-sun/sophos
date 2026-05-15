@@ -1,0 +1,331 @@
+/*  ======================================
+    renitialisation et styles global
+    ====================================== */
+
+:root {
+    --primary-color: #b34ef6;    /* Ton violet */
+    --secondary-color: #ffffff;  /* Blanc */
+    --accent-color: plum;        /* Couleur hover */
+    --button-color: orange;     /* Couleur hover */
+    --p-footer: orange;
+    --bg-footer: aliceblue;
+    --text-dark: black;
+}
+
+@font-face{
+    font-family:"Bariolbold";
+    src:url("font/bariolbold.ttf");
+}
+
+@font-face{
+    font-family:"bariolthin";
+    src:url("font/bariolthin1.ttf");
+}
+
+@font-face{
+    font-family:"cooperm";
+    src:url("font/cooperm.ttf");
+}
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* body */
+
+body{
+    background: linear-gradient(var(--secondary-color), var(--primary-color));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*  ======================================
+    header & navigation (responsive)
+    ====================================== */
+
+/* header */
+header {
+    padding: 20px;
+}
+
+h1{
+    font-family:Bariolbold;
+    margin-left: 10px;
+}
+
+h1 a{
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+h1 a:visited{
+    color: black;
+}
+
+h1 a:hover{
+    color: plum;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column; /* Empilé sur mobile */
+    align-items: center;
+    gap: 15px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li{
+    display: inline-block;
+    padding: 0 10px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--text-dark);
+    font-style: italic;
+}
+
+nav ul li a:hover{
+    color: plum;
+}
+
+
+/*  ======================================
+    conteneur principal (mobile-first)
+    ====================================== */
+
+main{
+    flex: 1; /* Pousse le footer en bas */
+    display: flex;
+    flex-direction: column; /* Un sous l'autre */
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h3{
+    font-family: cooperm;
+    font-size: 28px;
+    margin-bottom: 60px;
+}
+
+h4 {
+    font-size: 25px;
+    color: white; 
+    font-family: bariolthin;
+}
+
+button {
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px dotted orange;
+    font-size: 30px;
+    font-family: cooperm;
+    background-color: aliceblue;
+    padding-bottom: 20px;
+}
+
+button:hover {
+    background-color:orange;
+}
+
+.svg{
+    width: 100%;
+    max-width: 250px; /* Plus grand sur mobile pour la visibilité */
+}
+
+#skate{
+    animation-name: cool;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cool{
+    from{
+        transform: rotateY(0deg);
+    }
+    
+    to{
+        transform: rotateY(25deg);
+    }
+}
+
+/*  ======================================
+            pieds de page 
+    ====================================== */
+
+footer {
+    background-color: var(--bg-footer);
+    border-radius: 50px 50px 0 0;
+    padding: 20px;
+}
+
+.pp {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 20px;
+}
+
+
+.pp ul {
+    list-style: none;
+}
+
+.pp ul li {
+    margin-bottom: 15px; /* Crée l'espace sous chaque lien */
+}
+
+/* Option de pro : on retire la marge sur le dernier élément */
+.pp ul li:last-child {
+    margin-bottom: 0;
+}
+
+.pp ul li a {
+    text-decoration: none;
+}
+
+.pp ul li a:active {
+    color: var(--text-dark);
+}
+
+.pp ul li a:hover {
+    text-decoration: underline;
+}
+
+.disign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+p {
+    padding-top: 15px;
+    color: var( --p-footer);
+    font-style: italic;
+}
+
+
+/*  ======================================
+                média queries 
+    ====================================== */
+
+/* Ecran moyen / tablette */
+
+@media screen and (min-width: 768px) {
+    .nav {
+        flex-direction: row; /* Menu aligné sur les côtés */
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    
+    
+
+    /* main {
+        flex-direction: row; /* Texte à gauche, image à droite
+        justify-content: space-around;
+        text-align: left;
+        padding: 100px 50px;
+    }
+*/
+    
+    .main-1 {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    
+    .main-2 {
+        width: 100%;
+        display:flex;
+        justify-content: flex-start;
+        margin-top: -50px;
+    }
+    
+    .main-3 {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    h3 {
+        flex: 1;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    
+    h4 {
+    font-size: 25px;
+    color: white; 
+    font-family: bariolthin;
+}
+
+    .svg {
+        flex: 1;
+        max-width: 320px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .nav {
+        flex-direction: row; /* Menu aligné sur les côtés */
+        justify-content: space-between;
+        padding: 0 10px;
+    } 
+
+    .main-1 {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    
+    .main-2 {
+        width: 100%;
+        display:flex;
+        justify-content: flex-start;
+        margin-top: -100px;
+    }
+    
+    .main-3 {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 50px;
+    }   
+   
+    h3 {
+        font-size: 50px;
+        margin-bottom: 0;
+    }
+    
+    h4 {
+    font-size: 33px;
+    color: white; 
+    font-family: bariolthin;
+}
+
+    .svg {
+        max-width: 700px;
+    }
+}
+        
+
+    
+
+
