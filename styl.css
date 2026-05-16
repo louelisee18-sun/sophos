@@ -14,17 +14,17 @@
 
 @font-face{
     font-family:"Bariolbold";
-    src:url("font/bariolbold.ttf");
+    src:url("bariolbold.ttf");
 }
 
 @font-face{
     font-family:"bariolthin";
-    src:url("font/bariolthin1.ttf");
+    src:url("bariolthin1.ttf");
 }
 
 @font-face{
     font-family:"cooperm";
-    src:url("font/cooperm.ttf");
+    src:url("cooperm.ttf");
 }
 
 *,
